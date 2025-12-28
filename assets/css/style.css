@@ -1,0 +1,199 @@
+:root{
+  --primario: #3b82f6;
+  --fondo-claro: #f8fafc;
+  --fondo-oscuro: #eef2ff;
+  --texto: #0f172a;
+  --texto-sec: #334155;
+  --radio: 12px;
+}
+
+html{ scroll-behavior: smooth; }
+body{
+  font-family: 'Inter', sans-serif;
+  color: var(--texto);
+  margin: 0;
+  line-height: 1.45;
+  background: white;
+  padding-top: 56px; /* espacio por cabecera fija */
+}
+
+/* ================= HEADER ================= */
+.header-fijo{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  backdrop-filter: blur(6px);
+}
+
+.navbar-brand--logo{
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.navbar-brand--logo img{ height: 28px; }
+
+/* ================= SECCIONES ================= */
+.seccion{
+  padding: 40px 18px;
+}
+.seccion--clara{ background: var(--fondo-claro); }
+.seccion--oscura{ background: var(--fondo-oscuro); }
+
+.titulo-seccion{
+  text-align:center;
+  margin-bottom: 18px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* ================= HERO ================= */
+.hero{
+  min-height: calc(100vh - 56px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding: 30px 18px;
+  background-image: linear-gradient(180deg, rgba(3,7,18,0.45), rgba(3,7,18,0.45)),
+  url('https://images.unsplash.com/photo-1526378720497-3fcb1f1d4f10');
+  background-size:cover;
+  background-position:center;
+}
+.hero__titulo{
+  font-size:1.6rem;
+  font-weight:700;
+  margin-bottom:12px;
+}
+.hero__sub{
+  font-size:0.95rem;
+  margin-bottom:18px;
+}
+.cta-hero{
+  display:inline-block;
+  padding:12px 18px;
+  background:var(--primario);
+  border-radius:10px;
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* ================= PRESENTACIÓN ================= */
+.presentacion__texto{
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--texto-sec);
+}
+
+/* ================= CARACTERÍSTICAS ================= */
+.caracteristicas-grid{
+  display:grid;
+  gap:14px;
+  grid-template-columns:1fr;
+}
+
+.caracteristica{
+  background:white;
+  border-radius:var(--radio);
+  padding:14px;
+  box-shadow:0 6px 18px rgba(12,18,30,0.06);
+  display:flex;
+  gap:12px;
+}
+
+.caracteristica__icono{
+  font-size:1.6rem;
+  color:var(--primario);
+  width:40px;
+  text-align:center;
+}
+.caracteristica__titulo{
+  font-weight:600;
+  margin-bottom:6px;
+}
+.caracteristica__descripcion{
+  color:var(--texto-sec);
+  font-size:0.95rem;
+}
+
+/* ================= BENEFICIOS ================= */
+.beneficio{
+  background:white;
+  padding:12px;
+  border-radius:var(--radio);
+  box-shadow:0 6px 14px rgba(12,18,30,0.05);
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.beneficio__img{
+  flex:0 0 110px;
+  height:110px;
+  border-radius:10px;
+  background-size:cover;
+  background-position:center;
+}
+
+/* ================= CTA COMPRA ================= */
+.cta{
+  padding:28px 18px;
+  border-radius:12px;
+  text-align:center;
+  background:linear-gradient(90deg, var(--primario), #06b6d4);
+  color:white;
+}
+.cta__btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:12px 20px;
+  background:white;
+  color:var(--primario);
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:700;
+}
+
+/* ================= FORMULARIO ================= */
+.formulario-contacto{
+  max-width:720px;
+  margin:0 auto;
+}
+
+/* ================= UTILITARIAS ================= */
+.texto-centro{ text-align:center; }
+.img-fluid-rounded{ width:100%; border-radius:10px; }
+
+/* ================= MQ TABLET ================= */
+@media (min-width:768px){
+  .hero__titulo{ font-size:2.2rem; }
+  .hero__sub{ font-size:1.05rem; }
+
+  .caracteristicas-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .beneficio__img{
+    flex:0 0 160px;
+    height:160px;
+  }
+}
+
+/* ================= MQ ESCRITORIO ================= */
+@media (min-width:992px){
+  body{ padding-top:72px; }
+  .hero{ min-height: calc(100vh - 72px); }
+  .hero__titulo{ font-size:3rem; }
+
+  .caracteristicas-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+  }
+
+  .presentacion__texto{ max-width:1000px; }
+
+  .seccion{ padding:60px 32px; }
+}
